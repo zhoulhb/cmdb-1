@@ -68,7 +68,7 @@ services:
         sed -i "s#USE_ES = False#USE_ES = True#g" settings.py
         sed -i "s#USE_ACL = False#USE_ACL = True#g" settings.py
         sed -i "s#ES_HOST = '127.0.0.1'#ES_HOST = 'cmdb-search'#g" settings.py
-        sleep 20
+        sleep 40
         gunicorn --workers=3 autoapp:app -b 0.0.0.0:5000 -D
         flask init-cache
         flask init-acl
